@@ -34,13 +34,14 @@ function EmberCliHtmlMinifier(project) {
 }
 
 EmberCliHtmlMinifier.prototype.included = function(app) {
+  this.app = app;
   this.options = app.options.minifyHTML || {};
   this.enabled = typeof this.options.enabled !== 'undefined' ? this.options.enabled : app.env === 'production';
 };
 
 EmberCliHtmlMinifier.prototype.postprocessTree = function(type, tree) {
   if (type === 'all' && this.enabled) {
-    var htmlFilePath = this.options.outputPaths.app.html || 'index.html';
+    var htmlFilePath = this.app.options.outputPaths.app.html || 'index.html';
     var htmlFileTree = new Funnel( tree, {
       files: [ htmlFilePath ]
     });

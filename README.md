@@ -22,7 +22,7 @@ var app = new EmberApp({
 ```
 
 ## Minifier Options
-See: https://github.com/kangax/html-minifier#options-quick-reference
+See: https://github.com/kangax/html-minifier#options-quick-reference  
 By default, the **html-minifier** module has all options turned off, so **ember-cli-html-minifier** sets some sensible options:
 
 ```js

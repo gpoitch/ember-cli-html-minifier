@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-html-minifier",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Uses html-minifier to minify your ember-cli app's html as well as any inline js/css",
   "main": "index.js",
   "author": "Garth Poitras <garth22@gmail.com> (http://garthpoitras.com/)",
