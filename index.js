@@ -10,7 +10,7 @@ function HtmlMinifierFilter(inputTree, options) {
     return new HtmlMinifierFilter(inputTree, options);
   }
   this.inputTree = inputTree;
-  this.miniferOptions = extend(defaultMinifierOptions, options);
+  this.minifierOptions = extend(defaultMinifierOptions, options);
 }
 
 HtmlMinifierFilter.prototype = Object.create(Filter.prototype);
@@ -18,7 +18,7 @@ HtmlMinifierFilter.prototype.constructor = HtmlMinifierFilter;
 HtmlMinifierFilter.prototype.extensions = ['html'];
 HtmlMinifierFilter.prototype.targetExtension = 'html';
 HtmlMinifierFilter.prototype.processString = function(string) {
-  return minify(string, this.miniferOptions);
+  return minify(string, this.minifierOptions);
 };
 
 
@@ -46,7 +46,7 @@ EmberCliHtmlMinifier.prototype.postprocessTree = function(type, tree) {
       files: [ htmlFilePath ]
     });
 
-    var minifiedHtml = HtmlMinifierFilter(htmlFileTree, this.options.miniferOptions);
+    var minifiedHtml = HtmlMinifierFilter(htmlFileTree, this.options.minifierOptions);
     return mergeTrees([tree, minifiedHtml], { overwrite: true });
   }
 
