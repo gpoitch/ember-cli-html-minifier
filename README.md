@@ -16,6 +16,7 @@ You can also manually control if it is enabled, and tune the minfier options to 
 var app = new EmberApp({
   minifyHTML: {
     enabled: true,
+    htmlFiles: ['index.html'],
     minifierOptions: { ... }
   }
 });

@@ -41,9 +41,13 @@ EmberCliHtmlMinifier.prototype.included = function(app) {
 
 EmberCliHtmlMinifier.prototype.postprocessTree = function(type, tree) {
   if (type === 'all' && this.enabled) {
-    var htmlFilePath = this.app.options.outputPaths.app.html || 'index.html';
+    var htmlFiles = this.options.htmlFiles;
+    if(!htmlFiles || !Array.isArray(htmlFiles)){
+        var htmlFilePath = this.app.options.outputPaths.app.html || 'index.html';
+        htmlFiles = [htmlFilePath];
+    }
     var htmlFileTree = new Funnel( tree, {
-      files: [ htmlFilePath ]
+      files: htmlFiles
     });
 
     var minifiedHtml = HtmlMinifierFilter(htmlFileTree, this.options.minifierOptions);
