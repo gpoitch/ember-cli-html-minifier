@@ -20,7 +20,7 @@
     "broccoli-filter": "^0.1.10",
     "broccoli-funnel": "^0.1.6",
     "broccoli-merge-trees": "^0.2.1",
-    "html-minifier": "^0.6.9",
+    "html-minifier": "^1.0.0",
     "util-extend": "^1.0.1"
   }
 }
