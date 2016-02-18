@@ -11,6 +11,7 @@ function HtmlMinifierFilter(inputTree, options) {
   }
   this.inputTree = inputTree;
   this.minifierOptions = extend(defaultMinifierOptions, options);
+  this.minifierOptions.ignoreCustomComments.push(/^\s*EMBER_CLI_FASTBOOT.*/);
 }
 
 HtmlMinifierFilter.prototype = Object.create(Filter.prototype);
@@ -23,10 +24,11 @@ HtmlMinifierFilter.prototype.processString = function(string) {
 
 
 var defaultMinifierOptions = {
-  collapseWhitespace : true,
-  removeComments     : true,
-  minifyJS           : true,
-  minifyCSS          : true
+  collapseWhitespace   : true,
+  removeComments       : true,
+  ignoreCustomComments : [],
+  minifyJS             : true,
+  minifyCSS            : true
 };
 
 function EmberCliHtmlMinifier(project) {
