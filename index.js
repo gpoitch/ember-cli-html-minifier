@@ -26,7 +26,8 @@ var defaultMinifierOptions = {
   collapseWhitespace : true,
   removeComments     : true,
   minifyJS           : true,
-  minifyCSS          : true
+  minifyCSS          : true,
+  ignoreCustomComments: [ /^\s*EMBER_CLI_FASTBOOT_BODY|EMBER_CLI_FASTBOOT_HEAD/ ]
 };
 
 function EmberCliHtmlMinifier(project) {
