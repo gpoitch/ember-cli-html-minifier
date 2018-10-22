@@ -11,6 +11,7 @@ function HtmlMinifierFilter(inputTree, options) {
   }
   this.inputTree = inputTree;
   this.minifierOptions = extend(defaultMinifierOptions, options);
+  Filter.call(this, inputTree);
 }
 
 HtmlMinifierFilter.prototype = Object.create(Filter.prototype);
@@ -30,9 +31,8 @@ var defaultMinifierOptions = {
   ignoreCustomComments: [ /^\s*EMBER_CLI_FASTBOOT_BODY|EMBER_CLI_FASTBOOT_HEAD/ ]
 };
 
-function EmberCliHtmlMinifier(inputNode) {
+function EmberCliHtmlMinifier(project) {
   this.name = 'ember-cli-html-minifier';
-  Filter.call(this, inputNode);
 }
 
 EmberCliHtmlMinifier.prototype.included = function(app) {
