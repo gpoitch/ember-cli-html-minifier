@@ -30,8 +30,9 @@ var defaultMinifierOptions = {
   ignoreCustomComments: [ /^\s*EMBER_CLI_FASTBOOT_BODY|EMBER_CLI_FASTBOOT_HEAD/ ]
 };
 
-function EmberCliHtmlMinifier(project) {
+function EmberCliHtmlMinifier(inputNode) {
   this.name = 'ember-cli-html-minifier';
+  Filter.call(this, inputNode);
 }
 
 EmberCliHtmlMinifier.prototype.included = function(app) {
