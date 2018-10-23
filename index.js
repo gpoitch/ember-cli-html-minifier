@@ -11,6 +11,7 @@ function HtmlMinifierFilter(inputTree, options) {
   }
   this.inputTree = inputTree;
   this.minifierOptions = extend(defaultMinifierOptions, options);
+  Filter.call(this, inputTree);
 }
 
 HtmlMinifierFilter.prototype = Object.create(Filter.prototype);
