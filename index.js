@@ -1,7 +1,7 @@
 var Funnel     = require('broccoli-funnel');
 var Filter     = require('broccoli-filter');
 var mergeTrees = require('broccoli-merge-trees');
-var minify     = require('html-minifier').minify;
+var minify     = require('html-minifier-terser').minify;
 var extend     = require('util-extend');
 
 
