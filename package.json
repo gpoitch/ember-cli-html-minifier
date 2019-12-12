@@ -14,7 +14,7 @@
     "minify",
     "compress",
     "html",
-    "html-minifier-terser"
+    "html-minifier"
   ],
   "ember-addon": {
     "after": [
